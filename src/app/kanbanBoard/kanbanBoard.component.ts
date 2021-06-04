@@ -72,12 +72,7 @@ export class KanbanBoard implements OnInit {
   }
 
   delete(taskN) {
-    for (let task of this.tasks) {
-      if(task.name === taskN) {
-        this.tasks = this.tasks.filter(function(el) { return el.name != taskN; });
-        break;
-      }
-    }
+    this.tasks = this.tasks.filter(function(el) { return el.name != taskN; });
     this.configureTasksForRendering();
   }
 
